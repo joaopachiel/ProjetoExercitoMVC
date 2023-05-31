@@ -1,4 +1,4 @@
-namespace ProjetoExercitoMVC.Models
+namespace ProjetoExercitoMVC.Models.ViewModels
 {
     public class ErrorViewModel
     {
