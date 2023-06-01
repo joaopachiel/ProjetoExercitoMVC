@@ -1,5 +1,6 @@
-namespace ProjetoExercitoMVC.Models.ViewModels
+namespace ProjetoExercitoMVC.Models.ViewModel
 {
+
     public class ErrorViewModel
     {
         public string? RequestId { get; set; }

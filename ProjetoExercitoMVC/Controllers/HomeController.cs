@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProjetoExercitoMVC.Models;
+using ProjetoExercitoMVC.Models.ViewModel;
 using System.Diagnostics;
 
 namespace ProjetoExercitoMVC.Controllers
