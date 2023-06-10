@@ -8,5 +8,10 @@ namespace ProjetoExercitoMVC.Controllers
         {
             return View();
         }
+
+        public IActionResult CriarNovo()
+        {
+            return View();
+        }
     }
 }
