@@ -1,4 +1,5 @@
 ﻿using ProjetoExercitoMVC.Models.Enum;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoExercitoMVC.Models.Entity
 {
@@ -6,6 +7,9 @@ namespace ProjetoExercitoMVC.Models.Entity
     {
         public int Id { get; set; }
         public string Nome { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataIngresso { get; set; }
         public string Graduacao { get; set; }
         public Companhia Companhia { get; set; }

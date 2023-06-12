@@ -1,4 +1,41 @@
-﻿@{
+﻿@model ProjetoExercitoMVC.Models.ViewModel.MilitarFormViewModel
+@{
     ViewData["Title"] = "Militares";
 }
-<h1>@ViewData["Title"]</h1>
+<h2> Cadastrar Militar</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CriarNovo">
+            <div class="form-group">
+                <label asp-for="Militar.Nome" class="control-label"></label>
+                <input asp-for="Militar.Nome" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Militar.DataIngresso" class="control-label"></label>
+                <input asp-for="Militar.DataIngresso" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Militar.Graduacao" class="control-label"></label>
+                <input asp-for="Militar.Graduacao" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Militar.FuncaoExercida" class="control-label"></label>
+                <input asp-for="Militar.FuncaoExercida" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Militar.Situacao" class="control-label"></label>
+                <input asp-for="Militar.Situacao" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Militar.Companhia" class="control-label"></label>
+                <select asp-for="Militar.Companhia" class="form-control"></select>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
