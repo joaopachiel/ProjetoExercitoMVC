@@ -1,10 +1,15 @@
-﻿namespace ProjetoExercitoMVC.Models.Enum
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ProjetoExercitoMVC.Models.Enum
 {
-    public enum SituacaoMilitar : int
+    public enum SituacaoMilitar
     {
-        Pronto = 0,
-        Férias = 1,
-        Machucado = 2
+        [Display(Name = "Pronto")]
+        pronto,
+        [Display(Name = "Férias")] 
+        férias,
+        [Display(Name = "Machucado")] 
+        machucado 
 
 
     }

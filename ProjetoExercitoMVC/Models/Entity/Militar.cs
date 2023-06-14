@@ -13,10 +13,10 @@ namespace ProjetoExercitoMVC.Models.Entity
         public DateTime DataIngresso { get; set; }
         public string Graduacao { get; set; }
         public Companhia Companhia { get; set; }
-        public SituacaoMilitar Situacao { get; set; }
+        public ICollection<SituacaoMilitar> Situacao { get; set; } = new List<SituacaoMilitar>();
         public string FuncaoExercida { get; set; }
 
-        public Militar(int id, string nome, DateTime dataIngresso, string graduacao, Companhia companhia, SituacaoMilitar situacao, string funcaoExercida)
+        public Militar(int id, string nome, DateTime dataIngresso, string graduacao, Companhia companhia, ICollection<SituacaoMilitar> situacao, string funcaoExercida)
         {
             Id = id;
             Nome = nome;
