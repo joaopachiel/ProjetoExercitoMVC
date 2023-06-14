@@ -6,6 +6,11 @@
         public string Nome { get; set; }
         public ICollection<Militar> Militares { get; set; }
 
+        public Companhia()
+        {
+
+        }
+
         public Companhia(int id, string nome, ICollection<Militar> militares)
         {
             Id = id;

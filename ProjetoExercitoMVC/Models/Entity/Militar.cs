@@ -1,5 +1,6 @@
 ﻿using ProjetoExercitoMVC.Models.Enum;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjetoExercitoMVC.Models.Entity
 {
@@ -13,8 +14,15 @@ namespace ProjetoExercitoMVC.Models.Entity
         public DateTime DataIngresso { get; set; }
         public string Graduacao { get; set; }
         public Companhia Companhia { get; set; }
+
+        [NotMapped]
         public ICollection<SituacaoMilitar> Situacao { get; set; } = new List<SituacaoMilitar>();
         public string FuncaoExercida { get; set; }
+
+        public Militar()
+        {
+
+        }
 
         public Militar(int id, string nome, DateTime dataIngresso, string graduacao, Companhia companhia, ICollection<SituacaoMilitar> situacao, string funcaoExercida)
         {
