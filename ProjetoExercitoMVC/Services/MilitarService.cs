@@ -1,6 +1,6 @@
 ﻿using ProjetoExercitoMVC.Data.Context;
 
-namespace ProjetoExercitoMVC.Models.Services
+namespace ProjetoExercitoMVC.Services
 {
     public class MilitarService
     {

@@ -5,6 +5,7 @@ using System.Globalization;
 using Microsoft.Extensions.DependencyInjection;
 using ProjetoExercitoMVC.Data.Context;
 using ProjetoExercitoMvcContext = ProjetoExercitoMVC.Data.Context.ProjetoExercitoMvcContext;
+using ProjetoExercitoMVC.Services;
 
 namespace ProjetoExercitoMVC
 {
@@ -24,6 +25,9 @@ namespace ProjetoExercitoMVC
 
             services.AddDbContext<ProjetoExercitoMvcContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ProjetoExercitoMvcContext")));
+
+            services.AddScoped<MilitarService>();
+            services.AddScoped<CompanhiaService>();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)

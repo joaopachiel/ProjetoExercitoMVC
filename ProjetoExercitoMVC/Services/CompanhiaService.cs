@@ -2,7 +2,7 @@
 using ProjetoExercitoMVC.Models.Entity;
 using ProjetoExercitoMVC.Models.ViewModel;
 
-namespace ProjetoExercitoMVC.Models.Services
+namespace ProjetoExercitoMVC.Services
 {
     public class CompanhiaService
     {
