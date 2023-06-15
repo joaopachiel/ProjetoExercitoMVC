@@ -24,7 +24,8 @@ namespace ProjetoExercitoMVC
             services.AddControllersWithViews();
 
             services.AddDbContext<ProjetoExercitoMvcContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ProjetoExercitoMvcContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("ProjetoExercitoMvcContext"), builder => 
+                    builder.MigrationsAssembly("ProjetoExercitoMVC")));
 
             services.AddScoped<MilitarService>();
             services.AddScoped<CompanhiaService>();

@@ -13,13 +13,29 @@ namespace ProjetoExercitoMVC.Services
             _context = context;
         }
 
-        //public CompanhiaFormViewModel ObterCompanhia()
-        //{
-        //    var companhia = new Companhia(0,null,0,null);
+        public List<Companhia> BuscarCompanhias()
+        {
+            return _context.Companhia.OrderBy(x => x.Nome).ToList();
+        }
 
-        //    var companhiaViewModel = new CompanhiaFormViewModel();
+        public void AdicionarCompanhia(Companhia companhia)
+        {
+            _context.Add(companhia);
+            _context.SaveChanges();
+            
+        }
 
-        //    companhiaViewModel.QuantidadeMilitares = companhia.Militares.Count();
-        //}
+        public void EditarCompanhia(Companhia companhia)
+        {
+            _context.Update(companhia);
+            _context.SaveChanges();
+        }
+
+        public void DeletarCompanhia(Companhia companhia)
+        {
+            _context.Remove(companhia);
+            _context.SaveChanges();
+        }
+
     }
 }

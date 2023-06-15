@@ -11,11 +11,10 @@
 
         }
 
-        public Companhia(int id, string nome, ICollection<Militar> militares)
+        public Companhia(int id, string nome)
         {
             Id = id;
             Nome = nome;
-            Militares = militares;
         }
     }
 }
