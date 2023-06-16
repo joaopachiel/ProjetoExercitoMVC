@@ -17,7 +17,8 @@ namespace ProjetoExercitoMVC.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var listaMilitares = _militarService.BuscarTodosMilitares();
+            return View(listaMilitares);
         }
 
         public IActionResult CriarNovo()
@@ -31,6 +32,22 @@ namespace ProjetoExercitoMVC.Controllers
         public IActionResult CriarNovo(Militar militar)
         {
             _militarService.AdicionarMilitar(militar);
+                return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Editar(int id)
+        {
+            var militar = _militarService.BuscarMilitarPorId(id);
+
+            var companhias = _companhiaService.BuscarCompanhias();
+            var militarViewModel = new MilitarViewModel { Militar = militar, Companhias = companhias };
+            return View(militarViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Editar(Militar militar)
+        {
+            _militarService.EditarMilitar(militar);
                 return RedirectToAction(nameof(Index));
         }
     }
