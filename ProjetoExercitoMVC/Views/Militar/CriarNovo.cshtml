@@ -1,5 +1,5 @@
-﻿@using ProjetoExercitoMVC.Models.Enum
-@model ProjetoExercitoMVC.Models.ViewModel.MilitarFormViewModel
+﻿@model ProjetoExercitoMVC.Models.ViewModel.MilitarViewModel
+
 @{
     ViewData["Title"] = "Militares";
 }
@@ -26,12 +26,8 @@
                 <input asp-for="Militar.FuncaoExercida" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Militar.Situacao" class="control-label"></label>
-                <select asp-for="Militar.Situacao" asp-items="Html.GetEnumSelectList<SituacaoMilitar>()" class="form-control"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Militar.Companhia" class="control-label"></label>
-                <select asp-for="Militar.Companhia" class="form-control"></select>
+                <label asp-for="Militar.CompanhiaId" class="control-label"></label>
+                <select asp-for="Militar.CompanhiaId" asp-items="@(new SelectList(Model.Companhias, "Id", "Nome"))" class="form-control"></select>
             </div>
             <br />
             <div class="form-group">
