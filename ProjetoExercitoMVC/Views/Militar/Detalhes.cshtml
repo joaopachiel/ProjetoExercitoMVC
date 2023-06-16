@@ -1,0 +1,42 @@
+﻿@model ProjetoExercitoMVC.Models.Entity.Militar
+@{
+    ViewData["Title"] = "Detalhes do Militar";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Graduacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Graduacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FuncaoExercida)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FuncaoExercida)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataIngresso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataIngresso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Companhia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Companhia.Nome)
+        </dd>
+    </dl>
+    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+</div>
