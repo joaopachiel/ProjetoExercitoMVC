@@ -1,4 +1,5 @@
 ﻿using ProjetoExercitoMVC.Data.Context;
+using ProjetoExercitoMVC.Models.Entity;
 
 namespace ProjetoExercitoMVC.Services
 {
@@ -9,6 +10,12 @@ namespace ProjetoExercitoMVC.Services
         public MilitarService(ProjetoExercitoMvcContext context)
         {
             _context = context;
+        }
+
+        public void AdicionarMilitar(Militar militar)
+        {
+            _context.Add(militar);
+            _context.SaveChanges();
         }
     }
 }
