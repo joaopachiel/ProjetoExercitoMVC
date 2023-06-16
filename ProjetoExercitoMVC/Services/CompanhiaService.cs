@@ -37,5 +37,10 @@ namespace ProjetoExercitoMVC.Services
             _context.SaveChanges();
         }
 
+        public List<Companhia> BuscarTodasCompanhias()
+        {
+            return _context.Companhia.OrderBy(x => x.Nome).ToList();
+        }
+
     }
 }
