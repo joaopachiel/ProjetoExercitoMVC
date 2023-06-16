@@ -32,9 +32,11 @@ namespace ProjetoExercitoMVC.Controllers
                 return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            var companhia = _companhiaService.BuscarCompanhiaPorId(id);
+
+            return View(companhia);
         }
 
         [HttpPost]
@@ -44,9 +46,10 @@ namespace ProjetoExercitoMVC.Controllers
                 return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Deletar()
+        public IActionResult Deletar(int id)
         {
-            return View();
+            var companhia = _companhiaService.BuscarCompanhiaPorId(id);
+            return View(companhia);
         }
 
         [HttpPost]
