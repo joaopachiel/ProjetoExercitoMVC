@@ -10,10 +10,13 @@ namespace ProjetoExercitoMVC.Models.Entity
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Display(Name = "Data de ingresso")]
         public DateTime DataIngresso { get; set; }
         public string Graduacao { get; set; }
         public Companhia Companhia { get; set; }
         public int CompanhiaId { get; set; }
+
+        [Display(Name = "Função")]
         public string FuncaoExercida { get; set; }
 
         public Militar()
