@@ -18,6 +18,11 @@ namespace ProjetoExercitoMVC.Services
             return _context.Companhia.OrderBy(x => x.Nome).ToList();
         }
 
+        public Companhia BuscarCompanhiaPorId(int id)
+        {
+            return _context.Companhia.Find(id);
+        }
+
         public void AdicionarCompanhia(Companhia companhia)
         {
             _context.Add(companhia);
@@ -35,11 +40,6 @@ namespace ProjetoExercitoMVC.Services
         {
             _context.Remove(companhia);
             _context.SaveChanges();
-        }
-
-        public List<Companhia> BuscarTodasCompanhias()
-        {
-            return _context.Companhia.OrderBy(x => x.Nome).ToList();
         }
 
     }
