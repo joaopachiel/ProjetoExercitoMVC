@@ -5,7 +5,8 @@
 <h2>@ViewData["Title"]</h2>
 <hr/>
 
-<h3>Tem certeza que deseja excluir esta companhia?</h3><br />
+<h3>Tem certeza que deseja excluir @Html.DisplayFor(model => model.Nome)?</h3>
+<br />
 <div>
     <form asp-action="Deletar">
         <input type="submit" value="Excluir" class="btn btn-danger" />
