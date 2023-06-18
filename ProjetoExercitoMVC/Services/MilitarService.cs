@@ -13,6 +13,24 @@ namespace ProjetoExercitoMVC.Services
             _context = context;
         }
 
+        public List<Militar> BuscarMilitarPorPeriodo(DateTime? dataInicio, DateTime? dataFinal)
+        {
+            var militares = from obj in _context.Militar select obj;
+            if (dataInicio == null)
+            {
+                militares = militares.Where(x => x.DataIngresso >= dataInicio.Value);
+            }
+
+            if (dataFinal == null)
+            {
+                militares = militares.Where(x => x.DataIngresso <= dataFinal.Value);
+            }
+
+            return militares
+                .OrderBy(x => x.DataIngresso)
+                .ToList();
+        }
+
         public List<Militar> BuscarTodosMilitares()
         {
             return _context.Militar.OrderBy(x => x.Nome).ToList();

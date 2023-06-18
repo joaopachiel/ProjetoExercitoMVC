@@ -21,6 +21,28 @@ namespace ProjetoExercitoMVC.Controllers
             return View(listaMilitares.OrderBy(x => x.DataIngresso).ToList());
         }
 
+        public IActionResult Pesquisas()
+        {
+            return View();
+        }
+
+        public IActionResult BuscarMilitarPorPeriodo(DateTime? dataInicio, DateTime? dataFinal)
+        {
+            if (!dataInicio.HasValue)
+            {
+                dataInicio = new DateTime(1990, 1, 1);
+            }
+            if (!dataFinal.HasValue)
+            {
+                dataFinal = DateTime.Now;
+            }
+            ViewData["dataInicio"] = dataInicio.Value.ToString("yyyy-MM-dd");
+            ViewData["dataFinal"] = dataFinal.Value.ToString("yyyy-MM-dd");
+
+            var resultado = _militarService.BuscarMilitarPorPeriodo(dataInicio, dataFinal);
+            return View(resultado);
+        }
+
         public IActionResult CriarNovo()
         {
             var companhias = _companhiaService.BuscarCompanhias();

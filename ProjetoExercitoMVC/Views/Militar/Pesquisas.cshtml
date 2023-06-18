@@ -1,0 +1,34 @@
+﻿@model ProjetoExercitoMVC.Models.Entity.Militar
+
+@{
+    ViewData["Title"] = "Buscas";
+}
+<h2> @ViewData["Title"]</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form class="form-horizontal" asp-action="BuscarMilitarPorPeriodo">
+
+            <h4>Busca por período</h4>
+            <div class="form-group">
+                <label for="dataInicio" class="col-lg-2 control-label">Data inicial</label>
+                <div class="col-lg-10">
+                    <input type="date" name="dataInicio" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dataFinal" class="col-lg-2 control-label">Data final</label>
+                <div class="col-lg-10">
+                    <input type="date" name="dataFinal" class="form-control" />
+                </div>
+            </div><br />
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <a asp-action="BuscarMilitarPorPeriodo" class="btn btn-primary">Buscar</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
