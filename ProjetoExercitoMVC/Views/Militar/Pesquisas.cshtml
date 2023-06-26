@@ -9,7 +9,6 @@
 <div class="row">
     <div class="col-md-6">
         <form class="form-horizontal" asp-action="BuscarMilitarPorPeriodo">
-
             <h4>Busca por período</h4>
             <div class="form-group">
                 <label for="dataInicio" class="col-lg-2 control-label">Data inicial</label>
@@ -25,7 +24,28 @@
             </div><br />
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                    <a asp-action="BuscarMilitarPorPeriodo" class="btn btn-primary">Buscar</a>
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="BuscarMilitarPorId">
+
+            <h4>Busca por Id</h4>
+            <div class="form-group">
+                <label class="col-lg-6 control-label">Informe o Id do Militar</label>
+                <input asp-for="Id" class="col-lg-6 form-control" />
+            </div>
+           <br />
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
                 </div>
             </div>
 
