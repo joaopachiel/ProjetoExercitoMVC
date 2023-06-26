@@ -15,15 +15,12 @@ namespace ProjetoExercitoMVC.Controllers
             _militarService = militarService;
             _companhiaService = companhiaService;
         }
-        public IActionResult Index()
-        {
-            var listaMilitares = _militarService.BuscarTodosMilitares();
-            return View(listaMilitares.OrderBy(x => x.DataIngresso).ToList());
-        }
+        
 
-        public IActionResult Pesquisas()
+        public IActionResult BuscarMilitarPorId(int id)
         {
-            return View();
+            var militar = _militarService.BuscarMilitarPorId(id);
+            return View(militar);
         }
 
         public IActionResult BuscarMilitarPorPeriodo(DateTime? dataInicio, DateTime? dataFinal)
@@ -41,6 +38,17 @@ namespace ProjetoExercitoMVC.Controllers
 
             var resultado = _militarService.BuscarMilitarPorPeriodo(dataInicio, dataFinal);
             return View(resultado);
+        }
+
+        public IActionResult Index()
+        {
+            var listaMilitares = _militarService.BuscarTodosMilitares();
+            return View(listaMilitares.OrderBy(x => x.DataIngresso).ToList());
+        }
+
+        public IActionResult Pesquisas()
+        {
+            return View();
         }
 
         public IActionResult CriarNovo()

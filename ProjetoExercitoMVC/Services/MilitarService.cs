@@ -16,12 +16,12 @@ namespace ProjetoExercitoMVC.Services
         public List<Militar> BuscarMilitarPorPeriodo(DateTime? dataInicio, DateTime? dataFinal)
         {
             var militares = from obj in _context.Militar select obj;
-            if (dataInicio == null)
+            if (dataInicio.HasValue)
             {
                 militares = militares.Where(x => x.DataIngresso >= dataInicio.Value);
             }
 
-            if (dataFinal == null)
+            if (dataFinal.HasValue)
             {
                 militares = militares.Where(x => x.DataIngresso <= dataFinal.Value);
             }
@@ -40,7 +40,7 @@ namespace ProjetoExercitoMVC.Services
         {
             return _context.Militar.Include(x => x.Companhia).FirstOrDefault(x => x.Id == id);
         }
-
+        
         public void AdicionarMilitar(Militar militar)
         {
             _context.Add(militar);
