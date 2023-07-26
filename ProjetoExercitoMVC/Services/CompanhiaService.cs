@@ -1,10 +1,11 @@
 ﻿using ProjetoExercitoMVC.Data.Context;
 using ProjetoExercitoMVC.Models.Entity;
 using ProjetoExercitoMVC.Models.ViewModel;
+using ProjetoExercitoMVC.Services.Interfaces;
 
 namespace ProjetoExercitoMVC.Services
 {
-    public class CompanhiaService
+    public class CompanhiaService : ICompanhiaService
     {
         private readonly ProjetoExercitoMvcContext _context;
 

@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetoExercitoMVC.Data.Context;
 using ProjetoExercitoMVC.Models.Entity;
+using ProjetoExercitoMVC.Services.Interfaces;
 
 namespace ProjetoExercitoMVC.Services
 {
-    public class MilitarService
+    public class MilitarService : IMilitarService
     {
         private readonly ProjetoExercitoMvcContext _context;
 
